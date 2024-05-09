@@ -1,0 +1,192 @@
+[
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbCUDA.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbCUDA.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbCUDA.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbDirectory.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbDirectory.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbDirectory.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbPath.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbPath.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbPath.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbUtils.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbUtils.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbUtils.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbPPM.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbPPM.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbPPM.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbImage.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbImage.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbImage.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbFile.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbFile.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbFile.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbMPI.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbMPI.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbMPI.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbDataset.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbDataset.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbDataset.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbSolution.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbSolution.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbSolution.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbTimer.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbTimer.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbTimer.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbInit.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbInit.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbInit.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbSparse.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbSparse.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbSparse.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbImport.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbImport.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbImport.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbLogger.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbLogger.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbLogger.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbExit.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbExit.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbExit.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbArg.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbArg.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbArg.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/wbExport.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbExport.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbExport.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -Dlibwb_EXPORTS -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/libwb.dir/vendor/json11.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/vendor/json11.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/vendor/json11.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbCUDA.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbCUDA.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbCUDA.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbDirectory.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbDirectory.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbDirectory.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbPath.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbPath.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbPath.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbUtils.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbUtils.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbUtils.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbPPM.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbPPM.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbPPM.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbImage.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbImage.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbImage.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbFile.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbFile.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbFile.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbMPI.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbMPI.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbMPI.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbDataset.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbDataset.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbDataset.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbSolution.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbSolution.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbSolution.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbTimer.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbTimer.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbTimer.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbInit.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbInit.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbInit.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbSparse.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbSparse.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbSparse.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbImport.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbImport.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbImport.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbLogger.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbLogger.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbLogger.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbExit.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbExit.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbExit.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbArg.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbArg.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbArg.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/wbExport.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbExport.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/wbExport.cpp"
+},
+{
+  "directory": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -I\"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb\"   -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG   -std=gnu++11 -o CMakeFiles/wb.dir/vendor/json11.cpp.o -c \"/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/vendor/json11.cpp\"",
+  "file": "/Users/herve/Google Drive/Aulas/CAD/praticas/cadlabs-04/libwb/vendor/json11.cpp"
+}
+]
