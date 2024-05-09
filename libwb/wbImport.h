@@ -5,23 +5,23 @@
 #include "wbImage.h"
 
 typedef enum en_wbImportKind_t {
-  wbImportKind_unknown = -1,
-  wbImportKind_raw     = 0x1000,
-  wbImportKind_csv,
-  wbImportKind_tsv,
-  wbImportKind_ppm,
-  wbImportKind_text
+	wbImportKind_unknown = -1,
+	wbImportKind_raw = 0x1000,
+	wbImportKind_csv,
+	wbImportKind_tsv,
+	wbImportKind_ppm,
+	wbImportKind_text
 } wbImportKind_t;
 
 #define wbType_real wbType_float
 
 typedef struct st_wbImportCSV_t {
-  int rows;
-  int columns;
-  void *data;
-  wbFile_t file;
-  char seperator;
-} * wbImportCSV_t;
+	int rows;
+	int columns;
+	void *data;
+	wbFile_t file;
+	char seperator;
+} *wbImportCSV_t;
 
 #define wbImportCSV_getRowCount(csv) ((csv)->rows)
 #define wbImportCSV_getColumnCount(csv) ((csv)->columns)
@@ -38,11 +38,11 @@ typedef struct st_wbImportCSV_t {
   (wbImportCSV_getSeperator(csv) = val)
 
 typedef struct st_wbImportRaw_t {
-  int rows;
-  int columns;
-  void *data;
-  wbFile_t file;
-} * wbImportRaw_t;
+	int rows;
+	int columns;
+	void *data;
+	wbFile_t file;
+} *wbImportRaw_t;
 
 #define wbImportRaw_getRowCount(raw) ((raw)->rows)
 #define wbImportRaw_getColumnCount(raw) ((raw)->columns)
@@ -56,10 +56,10 @@ typedef struct st_wbImportRaw_t {
 #define wbImportRaw_setData(raw, val) (wbImportRaw_getData(raw) = val)
 
 typedef struct st_wbImportText_t {
-  int length;
-  char *data;
-  wbFile_t file;
-} * wbImportText_t;
+	int length;
+	char *data;
+	wbFile_t file;
+} *wbImportText_t;
 
 #define wbImportText_getLength(txt) ((txt)->length)
 #define wbImportText_getData(txt) ((txt)->data)
@@ -70,13 +70,13 @@ typedef struct st_wbImportText_t {
 #define wbImportText_setData(txt, val) (wbImportText_getData(txt) = val)
 
 typedef struct st_wbImport_t {
-  wbImportKind_t kind;
-  union {
-    wbImportRaw_t raw;
-    wbImportCSV_t csv;
-    wbImportText_t text;
-    wbImage_t img;
-  } container;
+	wbImportKind_t kind;
+	union {
+		wbImportRaw_t raw;
+		wbImportCSV_t csv;
+		wbImportText_t text;
+		wbImage_t img;
+	} container;
 } wbImport_t;
 
 #define wbImport_getKind(imp) ((imp).kind)
@@ -93,11 +93,16 @@ typedef struct st_wbImport_t {
 #define wbImport_setImage(imp, val) (wbImport_getImage(imp) = val)
 
 EXTERN_C void *wbImport(const char *file, int *rows);
+
 void *wbImport(const char *file, int *rows, int *columns);
+
 void *wbImport(const char *file, int *rows, const char *type);
+
 void *wbImport(const char *file, int *resRows, int *resColumns,
-               const char *type);
+			   const char *type);
+
 wbImage_t wbImport(const char *file);
+
 int wbImport_flag(const char *file);
 
 #endif /* __WB_IMPORT_H__ */

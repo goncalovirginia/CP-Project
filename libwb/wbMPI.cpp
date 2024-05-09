@@ -10,7 +10,7 @@ static int rank = -1;
 
 int wbMPI_getRank() {
   if (rank != -1) {
-    return rank;
+	return rank;
   }
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   return rank;
@@ -24,24 +24,24 @@ int rankCount() {
 
 const char *wbMPI_getStringFromRank(int rank, int tag) {
   if (isMasterQ) {
-    char *buf;
-    int bufSize;
-    MPI_Recv(&bufSize, 1, MPI_INT, rank, tag, MPI_COMM_WORLD,
-             MPI_STATUS_IGNORE);
-    buf = (char *)calloc(bufSize, sizeof(char));
-    MPI_Recv(buf, bufSize, MPI_CHAR, rank, tag, MPI_COMM_WORLD,
-             MPI_STATUS_IGNORE);
-    return buf;
+	char *buf;
+	int bufSize;
+	MPI_Recv(&bufSize, 1, MPI_INT, rank, tag, MPI_COMM_WORLD,
+			 MPI_STATUS_IGNORE);
+	buf = (char *)calloc(bufSize, sizeof(char));
+	MPI_Recv(buf, bufSize, MPI_CHAR, rank, tag, MPI_COMM_WORLD,
+			 MPI_STATUS_IGNORE);
+	return buf;
   }
 
   return NULL;
 }
 void wbMPI_sendStringToMaster(const char *str, int tag) {
   if (!isMasterQ) {
-    // we are going to send the string to the master
-    int len = (int)strlen(str) + 1;
-    MPI_Send(&len, 1, MPI_INT, 0, tag, MPI_COMM_WORLD);
-    MPI_Send((void *)str, len, MPI_CHAR, 0, tag, MPI_COMM_WORLD);
+	// we are going to send the string to the master
+	int len = (int)strlen(str) + 1;
+	MPI_Send(&len, 1, MPI_INT, 0, tag, MPI_COMM_WORLD);
+	MPI_Send((void *)str, len, MPI_CHAR, 0, tag, MPI_COMM_WORLD);
   }
 
   return;
@@ -61,7 +61,7 @@ bool finalizedQ = false;
 
 extern "C" int wbMPI_Finalize(void) {
   if (finalizedQ) {
-    return MPI_SUCCESS;
+	return MPI_SUCCESS;
   }
   finalizedQ = true;
   wb_atExit();

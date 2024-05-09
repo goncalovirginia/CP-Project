@@ -22,7 +22,7 @@
 // some warnings still occur at this level
 // if necessary, disable specific warnings not covered by previous pragma
 #pragma warning(                                                          \
-    disable : 4244 4056 4305 4800 4267 4996 4756 4661 4385 4101 4800)
+	disable : 4244 4056 4305 4800 4267 4996 4756 4661 4385 4101 4800)
 
 #define __func__ __FUNCTION__
 #ifndef _CRT_SECURE_NO_WARNINGS
@@ -35,10 +35,12 @@
 #include <windows.h>
 #define WB_USE_WINDOWS
 #else /* _MSC_VER */
+
 #include <stdint.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
+
 #define WB_USE_UNIX
 #ifdef __APPLE__
 #include <mach/mach_time.h>
@@ -97,7 +99,9 @@
 #endif /* WB_USE_JSON11 */
 
 #if WB_USE_JSON11
+
 #include "vendor/json11.hpp"
+
 #endif /* WB_USE_JSON11 */
 
 /***********************************************************/

@@ -10,48 +10,48 @@ extern uint64_t _hrtime_frequency;
 extern wbTimer_t _timer;
 
 typedef enum en_wbTimerKind_t {
-  wbTimerKind_Generic,
-  wbTimerKind_IO,
-  wbTimerKind_GPU,
-  wbTimerKind_Copy,
-  wbTimerKind_Driver,
-  wbTimerKind_CopyAsync,
-  wbTimerKind_Compute,
-  wbTimerKind_CPUGPUOverlap,
+	wbTimerKind_Generic,
+	wbTimerKind_IO,
+	wbTimerKind_GPU,
+	wbTimerKind_Copy,
+	wbTimerKind_Driver,
+	wbTimerKind_CopyAsync,
+	wbTimerKind_Compute,
+	wbTimerKind_CPUGPUOverlap,
 } wbTimerKind_t;
 
 struct st_wbTimerNode_t {
-  int idx;
-  char * id;
-  char * session_id;
-  int mpiRank;
-  int level;
-  wbBool stoppedQ;
-  wbTimerKind_t kind;
-  uint64_t startTime;
-  uint64_t endTime;
-  uint64_t elapsedTime;
-  int startLine;
-  int endLine;
-  const char *startFunction;
-  const char *endFunction;
-  const char *startFile;
-  const char *endFile;
-  wbTimerNode_t next;
-  wbTimerNode_t prev;
-  wbTimerNode_t parent;
-  char *msg;
+	int idx;
+	char *id;
+	char *session_id;
+	int mpiRank;
+	int level;
+	wbBool stoppedQ;
+	wbTimerKind_t kind;
+	uint64_t startTime;
+	uint64_t endTime;
+	uint64_t elapsedTime;
+	int startLine;
+	int endLine;
+	const char *startFunction;
+	const char *endFunction;
+	const char *startFile;
+	const char *endFile;
+	wbTimerNode_t next;
+	wbTimerNode_t prev;
+	wbTimerNode_t parent;
+	char *msg;
 };
 
 struct st_wbTimer_t {
-  char * id;
-  char * session_id;
-  size_t length;
-  wbTimerNode_t head;
-  wbTimerNode_t tail;
-  uint64_t startTime;
-  uint64_t endTime;
-  uint64_t elapsedTime;
+	char *id;
+	char *session_id;
+	size_t length;
+	wbTimerNode_t head;
+	wbTimerNode_t tail;
+	uint64_t startTime;
+	uint64_t endTime;
+	uint64_t elapsedTime;
 };
 
 #define wbTimerNode_getIdx(node) ((node)->idx)
@@ -121,22 +121,28 @@ struct st_wbTimer_t {
 uint64_t _hrtime(void);
 
 wbTimer_t wbTimer_new(void);
+
 void wbTimer_delete(wbTimer_t timer);
 
 string wbTimer_toJSON(wbTimer_t timer);
+
 string wbTimer_toJSON();
 
 string wbTimer_toXML(wbTimer_t timer);
+
 string wbTimer_toXML();
 
 wbTimerNode_t wbTimer_start(wbTimerKind_t kind, const char *file,
-                            const char *fun, int line);
+							const char *fun, int line);
+
 wbTimerNode_t wbTimer_start(wbTimerKind_t kind, string msg,
-                            const char *file, const char *fun, int line);
+							const char *file, const char *fun, int line);
+
 void wbTimer_stop(wbTimerKind_t kind, string msg, const char *file,
-                  const char *fun, int line);
+				  const char *fun, int line);
+
 void wbTimer_stop(wbTimerKind_t kind, const char *file, const char *fun,
-                  int line);
+				  int line);
 
 #define wbTime_start(kind, ...)                                           \
   wbTimer_start(wbTimerKind_##kind, wbString(__VA_ARGS__), wbFile,        \

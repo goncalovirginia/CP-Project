@@ -21,35 +21,35 @@ typedef struct st_wbFile_t *wbFile_t;
 #define wbFalse false
 
 typedef enum en_wbType_t {
-  wbType_unknown = -1,
-  wbType_ascii   = 1,
-  wbType_bit8,
-  wbType_ubit8,
-  wbType_integer,
-  wbType_float,
-  wbType_double
+	wbType_unknown = -1,
+	wbType_ascii = 1,
+	wbType_bit8,
+	wbType_ubit8,
+	wbType_integer,
+	wbType_float,
+	wbType_double
 } wbType_t;
 
 static inline size_t wbType_size(wbType_t ty) {
-  switch (ty) {
-    case wbType_unknown:
-      wbAssert(false && "Invalid wbType_unknown");
-      return 0;
-    case wbType_ascii:
-      return sizeof(char);
-    case wbType_bit8:
-      return sizeof(char);
-    case wbType_ubit8:
-      return sizeof(unsigned char);
-    case wbType_integer:
-      return sizeof(int);
-    case wbType_float:
-      return sizeof(float);
-    case wbType_double:
-      return sizeof(double);
-  }
-  wbAssert(false && "Invalid type");
-  return 0;
+	switch (ty) {
+		case wbType_unknown:
+			wbAssert(false && "Invalid wbType_unknown");
+			return 0;
+		case wbType_ascii:
+			return sizeof(char);
+		case wbType_bit8:
+			return sizeof(char);
+		case wbType_ubit8:
+			return sizeof(unsigned char);
+		case wbType_integer:
+			return sizeof(int);
+		case wbType_float:
+			return sizeof(float);
+		case wbType_double:
+			return sizeof(double);
+	}
+	wbAssert(false && "Invalid type");
+	return 0;
 }
 
 #endif /* __WB_TYPES_H__ */

@@ -4,12 +4,12 @@
 #define __WB_ARG_H__
 
 struct st_wbArg_t {
-  char * sessionId;
-  int inputCount;
-  char **inputFiles;
-  char *outputFile;
-  char *expectedOutput;
-  char *type;
+	char *sessionId;
+	int inputCount;
+	char **inputFiles;
+	char *outputFile;
+	char *expectedOutput;
+	char *type;
 };
 
 #define wbArg_getInputCount(wa) ((wa).inputCount)
@@ -33,7 +33,8 @@ EXTERN_C wbArg_t wbArg_new(int *argc, char ***argv);
 EXTERN_C void wbArg_delete(wbArg_t arg);
 EXTERN_C wbArg_t wbArg_read(int argc, char **argv);
 
-char* sessionId();
-char * _envSessionId();
+char *sessionId();
+
+char *_envSessionId();
 
 #endif /* __WB_ARG_H__ */

@@ -6,11 +6,11 @@
 #include "wbTypes.h"
 
 struct st_wbImage_t {
-  int width;
-  int height;
-  int channels;
-  int pitch;
-  float *data;
+	int width;
+	int height;
+	int channels;
+	int pitch;
+	float *data;
 };
 
 #define wbImage_channels 3
@@ -30,11 +30,16 @@ struct st_wbImage_t {
 typedef void (*wbImage_onSameFunction_t)(string str);
 
 wbImage_t wbImage_new(int width, int height, int channels, float *data);
+
 wbImage_t wbImage_new(int width, int height, int channels);
+
 wbImage_t wbImage_new(int width, int height);
+
 void wbImage_delete(wbImage_t img);
+
 wbBool wbImage_sameQ(wbImage_t a, wbImage_t b,
-                     wbImage_onSameFunction_t onUnSame);
+					 wbImage_onSameFunction_t onUnSame);
+
 wbBool wbImage_sameQ(wbImage_t a, wbImage_t b);
 
 #endif /* __IMAGE_H__ */

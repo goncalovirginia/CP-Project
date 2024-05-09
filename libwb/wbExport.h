@@ -8,18 +8,18 @@
 #include "wbPPM.h"
 
 typedef enum en_wbExportKind_t {
-  wbExportKind_unknown = -1,
-  wbExportKind_raw     = 0x1000,
-  wbExportKind_csv,
-  wbExportKind_tsv,
-  wbExportKind_ppm,
-  wbExportKind_text,
+	wbExportKind_unknown = -1,
+	wbExportKind_raw = 0x1000,
+	wbExportKind_csv,
+	wbExportKind_tsv,
+	wbExportKind_ppm,
+	wbExportKind_text,
 } wbExportKind_t;
 
 typedef struct st_wbExportText_t {
-  int length;
-  wbFile_t file;
-} * wbExportText_t;
+	int length;
+	wbFile_t file;
+} *wbExportText_t;
 
 #define wbExportText_getLength(txt) ((txt)->length)
 #define wbExportText_getFile(txt) ((txt)->file)
@@ -28,10 +28,10 @@ typedef struct st_wbExportText_t {
   (wbExportText_getLength(txt) = val)
 
 typedef struct st_wbExportRaw_t {
-  int rows;
-  int columns;
-  wbFile_t file;
-} * wbExportRaw_t;
+	int rows;
+	int columns;
+	wbFile_t file;
+} *wbExportRaw_t;
 
 #define wbExportRaw_getColumnCount(raw) ((raw)->columns)
 #define wbExportRaw_getRowCount(raw) ((raw)->rows)
@@ -43,11 +43,11 @@ typedef struct st_wbExportRaw_t {
   (wbExportRaw_getColumnCount(raw) = val)
 
 typedef struct st_wbExportCSV_t {
-  int rows;
-  int columns;
-  wbFile_t file;
-  char seperator;
-} * wbExportCSV_t;
+	int rows;
+	int columns;
+	wbFile_t file;
+	char seperator;
+} *wbExportCSV_t;
 
 #define wbExportCSV_getRowCount(csv) ((csv)->rows)
 #define wbExportCSV_getColumnCount(csv) ((csv)->columns)
@@ -62,14 +62,14 @@ typedef struct st_wbExportCSV_t {
   (wbExportCSV_getSeperator(csv) = val)
 
 typedef struct st_wbExport_t {
-  wbExportKind_t kind;
-  union {
-    wbExportRaw_t raw;
-    wbExportCSV_t csv;
-    wbImage_t img;
-    wbExportText_t text;
-  } container;
-  char *file;
+	wbExportKind_t kind;
+	union {
+		wbExportRaw_t raw;
+		wbExportCSV_t csv;
+		wbImage_t img;
+		wbExportText_t text;
+	} container;
+	char *file;
 } wbExport_t;
 
 #define wbExport_getKind(exprt) ((exprt).kind)
@@ -88,18 +88,26 @@ typedef struct st_wbExport_t {
 #define wbExport_setFile(exprt, val) (wbExport_getFile(exprt) = val)
 
 void wbExport(const char *file, int *data, int rows, int columns);
+
 void wbExport(const char *file, int *data, int rows);
+
 void wbExport(const char *file, unsigned char *data, int rows,
-              int columns);
+			  int columns);
+
 void wbExport(const char *file, unsigned char *data, int rows);
+
 void wbExport(const char *file, int *data, int rows, int columns);
+
 void wbExport(const char *file, int *data, int rows);
+
 void wbExport(const char *file, wbReal_t *data, int rows, int columns);
+
 void wbExport(const char *file, wbReal_t *data, int rows);
+
 void wbExport(const char *file, wbImage_t img);
 
 void wbExport(const char *file, wbExportKind_t kind, void *data, int rows,
-              int columns, wbType_t type);
+			  int columns, wbType_t type);
 
 void wbExport_text(const char *file, void *data, int length);
 

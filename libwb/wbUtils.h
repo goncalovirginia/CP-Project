@@ -10,9 +10,9 @@
 #define DEBUG(...)
 #endif /* WB_DEBUG */
 
-static char* uuid() {
-  auto u4 = sole::uuid4();
-  return wbString_duplicate(u4.str());
+static char *uuid() {
+	auto u4 = sole::uuid4();
+	return wbString_duplicate(u4.str());
 }
 
 #endif /* __WB_UTILS_H__ */

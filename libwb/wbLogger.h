@@ -5,35 +5,35 @@
 #include <stdint.h>
 
 typedef enum en_wbLogLevel_t {
-  wbLogLevel_unknown = -1,
-  wbLogLevel_OFF     = 0,
-  wbLogLevel_FATAL,
-  wbLogLevel_ERROR,
-  wbLogLevel_WARN,
-  wbLogLevel_INFO,
-  wbLogLevel_DEBUG,
-  wbLogLevel_TRACE
+	wbLogLevel_unknown = -1,
+	wbLogLevel_OFF = 0,
+	wbLogLevel_FATAL,
+	wbLogLevel_ERROR,
+	wbLogLevel_WARN,
+	wbLogLevel_INFO,
+	wbLogLevel_DEBUG,
+	wbLogLevel_TRACE
 } wbLogLevel_t;
 
 struct st_wbLogEntry_t {
-  char * id;
-  char * session_id;
-  int line;
-  int mpiRank;
-  char *msg;
-  uint64_t time;
-  const char *fun;
-  const char *file;
-  wbLogLevel_t level;
-  wbLogEntry_t next;
+	char *id;
+	char *session_id;
+	int line;
+	int mpiRank;
+	char *msg;
+	uint64_t time;
+	const char *fun;
+	const char *file;
+	wbLogLevel_t level;
+	wbLogEntry_t next;
 };
 
 struct st_wbLogger_t {
-  char * id;
-  char * session_id;
-  int length;
-  wbLogEntry_t head;
-  wbLogLevel_t level;
+	char *id;
+	char *session_id;
+	int length;
+	wbLogEntry_t head;
+	wbLogLevel_t level;
 };
 
 #define wbLogEntry_getId(elem) ((elem)->id)
@@ -89,12 +89,14 @@ void wbLogger_clear(wbLogger_t logger);
 void wbLogger_delete(wbLogger_t logger);
 
 void wbLogger_append(wbLogLevel_t level, string msg, const char *file,
-                     const char *fun, int line);
+					 const char *fun, int line);
 
 string wbLogger_toXML(wbLogger_t logger);
+
 string wbLogger_toXML();
 
 string wbLogger_toJSON(wbLogger_t logger);
+
 string wbLogger_toJSON();
 
 #endif /* __WB_LOGGER_H__ */

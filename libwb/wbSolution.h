@@ -4,14 +4,14 @@
 #define __WB_SOLUTION_H__
 
 typedef struct st_wbSolution_t {
-  char * id;
-  char * session_id;
-  char *type;
-  char *outputFile;
-  void *data;
-  int rows;
-  int columns;
-  int depth;
+	char *id;
+	char *session_id;
+	char *type;
+	char *outputFile;
+	void *data;
+	int rows;
+	int columns;
+	int depth;
 } wbSolution_t;
 
 #define wbSolution_getId(sol) ((sol).id)
@@ -39,9 +39,12 @@ typedef struct st_wbSolution_t {
 #define wbSolution_setDepth(sol, val) (wbSolution_getDepth(sol) = val)
 
 wbBool wbSolution(char *expectedOutputFile, char *outputFile, char *type0,
-                  void *data, int rows, int columns);
+				  void *data, int rows, int columns);
+
 wbBool wbSolution(wbArg_t arg, void *data, int rows, int columns);
+
 EXTERN_C wbBool wbSolution(wbArg_t arg, void *data, int rows);
+
 wbBool wbSolution(wbArg_t arg, wbImage_t img);
 
 #endif /* __WB_SOLUTION_H__ */

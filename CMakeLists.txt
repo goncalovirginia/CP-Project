@@ -34,25 +34,25 @@ enable_testing()
 # Download and unpack googletest at configure time
 #############
 
-set (GTEST_HOME ${CMAKE_CURRENT_BINARY_DIR}/googletest)
+set(GTEST_HOME ${CMAKE_CURRENT_BINARY_DIR}/googletest)
 
-message ("-- Loading Google Test from ${GTEST_HOME}")
+message("-- Loading Google Test from ${GTEST_HOME}")
 
 configure_file(${PROJECT_SOURCE_DIR}/cmake/CMakeLists.googletest.in ${GTEST_HOME}/download/CMakeLists.txt)
 
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
         RESULT_VARIABLE result
-        WORKING_DIRECTORY ${GTEST_HOME}/download )
-if(result)
+        WORKING_DIRECTORY ${GTEST_HOME}/download)
+if (result)
     message(FATAL_ERROR "CMake step for googletest failed: ${result}")
-endif()
+endif ()
 
 execute_process(COMMAND ${CMAKE_COMMAND} --build .
         RESULT_VARIABLE result
-        WORKING_DIRECTORY ${GTEST_HOME}/download )
-if(result)
+        WORKING_DIRECTORY ${GTEST_HOME}/download)
+if (result)
     message(FATAL_ERROR "Build step for googletest failed: ${result}")
-endif()
+endif ()
 
 # Prevent overriding the parent project's compiler/linker settings on Windows
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
@@ -62,6 +62,6 @@ add_subdirectory(${GTEST_HOME}/src
         ${GTEST_HOME}/build
         EXCLUDE_FROM_ALL)
 
-set (GTEST_BOTH_LIBRARIES gtest_main gtest)
+set(GTEST_BOTH_LIBRARIES gtest_main gtest)
 
-add_subdirectory (test)
+add_subdirectory(test)

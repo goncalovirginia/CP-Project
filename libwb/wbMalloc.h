@@ -12,27 +12,27 @@
 
 static inline void *_malloc(size_t size) THROW {
   if (size == 0) {
-    return NULL;
+	return NULL;
   } else {
-    int err;
-    void *res = memmgr_alloc((ulong)size, &err);
-    if (err) {
-      fprintf(stderr, "<<MEMORY>>:: Memory allocation failed\n");
-      exit(1);
-    } else {
-      size_t ii        = 0;
-      unsigned char *p = (unsigned char *)res;
-      while (ii++ < size) {
-        *p++ = 0;
-      }
-      return res;
-    }
+	int err;
+	void *res = memmgr_alloc((ulong)size, &err);
+	if (err) {
+	  fprintf(stderr, "<<MEMORY>>:: Memory allocation failed\n");
+	  exit(1);
+	} else {
+	  size_t ii        = 0;
+	  unsigned char *p = (unsigned char *)res;
+	  while (ii++ < size) {
+		*p++ = 0;
+	  }
+	  return res;
+	}
   }
 }
 
 static inline void _free(void *ptr) THROW {
   if (ptr != NULL) {
-    memmgr_free(ptr);
+	memmgr_free(ptr);
   }
 }
 
@@ -42,39 +42,39 @@ static inline void *_calloc(size_t nmemb, size_t size) THROW {
 
 static inline void *_realloc(void *ptr, size_t size) THROW {
   if (size == 0) {
-    free(ptr);
-    return NULL;
+	free(ptr);
+	return NULL;
   } else if (ptr == NULL) {
-    return malloc(size);
+	return malloc(size);
   } else {
-    void *buf;
-    unsigned char *dst;
-    unsigned char *src;
-    size_t alloc_size, to_copy, i = 0;
+	void *buf;
+	unsigned char *dst;
+	unsigned char *src;
+	size_t alloc_size, to_copy, i = 0;
 
-    // Allocate new buffer
-    buf = malloc(size);
+	// Allocate new buffer
+	buf = malloc(size);
 
-    if (buf != 0) {
-      // Find original allocation size
-      alloc_size = (size_t)memmgr_get_block_size(ptr);
-      to_copy    = alloc_size;
-      if (to_copy > size) {
-        to_copy = size;
-      }
+	if (buf != 0) {
+	  // Find original allocation size
+	  alloc_size = (size_t)memmgr_get_block_size(ptr);
+	  to_copy    = alloc_size;
+	  if (to_copy > size) {
+		to_copy = size;
+	  }
 
-      // Copy data to new buffer
-      dst = (unsigned char *)buf;
-      src = (unsigned char *)ptr;
-      while (i++ < to_copy) {
-        *dst++ = *src++;
-      }
+	  // Copy data to new buffer
+	  dst = (unsigned char *)buf;
+	  src = (unsigned char *)ptr;
+	  while (i++ < to_copy) {
+		*dst++ = *src++;
+	  }
 
-      // Free the old buffer
-      free(ptr);
-    }
+	  // Free the old buffer
+	  free(ptr);
+	}
 
-    return buf;
+	return buf;
   }
 }
 
@@ -98,31 +98,31 @@ static inline void *_realloc(void *ptr, size_t size) THROW {
 #else /* WB_USE_CUSTOM_MALLOC */
 
 static inline void *xMalloc(size_t sz) {
-  void *mem = NULL;
-  if (sz != 0) {
-    mem = malloc(sz);
-  }
-  return mem;
+	void *mem = NULL;
+	if (sz != 0) {
+		mem = malloc(sz);
+	}
+	return mem;
 }
 
 static inline void xFree(void *mem) {
-  if (mem != NULL) {
-    free(mem);
-  }
-  return;
+	if (mem != NULL) {
+		free(mem);
+	}
+	return;
 }
 
 static inline void *xRealloc(void *mem, size_t sz) {
-  if (mem == NULL) {
-    return NULL;
-  } else if (sz == 0) {
-    xFree(mem);
-    return NULL;
-  } else {
-    void *res = realloc(mem, sz);
-    wbAssert(res != NULL);
-    return res;
-  }
+	if (mem == NULL) {
+		return NULL;
+	} else if (sz == 0) {
+		xFree(mem);
+		return NULL;
+	} else {
+		void *res = realloc(mem, sz);
+		wbAssert(res != NULL);
+		return res;
+	}
 }
 
 #define wbNew(type) ((type *)wbMalloc(sizeof(type)))

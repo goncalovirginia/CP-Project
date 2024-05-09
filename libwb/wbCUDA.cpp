@@ -1,5 +1,6 @@
 
 #include "wb.h"
+
 #ifdef WB_USE_CUDA
 
 int _cudaMemoryListIdx = 0;
@@ -13,11 +14,11 @@ char *wbRandom_list(size_t sz) {
   char *rands = wbNewArray(char, sz);
   int *irands = (int *)rands;
   for (ii = 0; ii < sz / sizeof(int); ii++) {
-    irands[ii] = rand();
+	irands[ii] = rand();
   }
   while (ii < sz) {
-    rands[ii] = (char)(rand() % 255);
-    ii++;
+	rands[ii] = (char)(rand() % 255);
+	ii++;
   }
   return rands;
 }
