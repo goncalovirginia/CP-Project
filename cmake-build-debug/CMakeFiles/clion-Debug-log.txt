@@ -1,0 +1,15 @@
+/snap/clion/275/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/275/bin/ninja/linux/x64/ninja -G Ninja -S /home/goncalovirginia/CLionProjects/CP-Project -B /home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug
+-- Loading Google Test from /home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug/googletest
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug/googletest/download
+[1/7] Performing update step for 'googletest'
+[2/7] No patch step for 'googletest'
+[3/7] No configure step for 'googletest'
+[4/7] No build step for 'googletest'
+[5/7] No install step for 'googletest'
+[6/7] No test step for 'googletest'
+[7/7] Completed 'googletest'
+-- Configuring done (0.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug

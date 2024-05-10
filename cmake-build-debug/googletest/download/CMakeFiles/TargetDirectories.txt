@@ -1,0 +1,3 @@
+/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug/googletest/download/CMakeFiles/googletest.dir
+/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug/googletest/download/CMakeFiles/edit_cache.dir
+/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug/googletest/download/CMakeFiles/rebuild_cache.dir

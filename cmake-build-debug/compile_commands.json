@@ -1,0 +1,230 @@
+[
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbArg.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbArg.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbArg.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbArg.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbCUDA.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbCUDA.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbCUDA.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbCUDA.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbDataset.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbDataset.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbDataset.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbDataset.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbDirectory.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbDirectory.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbDirectory.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbDirectory.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbExit.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbExit.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbExit.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbExit.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbExport.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbExport.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbExport.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbExport.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbFile.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbFile.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbFile.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbFile.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbImage.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbImage.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbImage.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbImage.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbImport.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbImport.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbImport.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbImport.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbInit.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbInit.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbInit.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbInit.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbLogger.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbLogger.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbLogger.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbLogger.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbMPI.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbMPI.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbMPI.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbMPI.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbPPM.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbPPM.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbPPM.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbPPM.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbPath.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbPath.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbPath.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbPath.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbSolution.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbSolution.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbSolution.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbSolution.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbSparse.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbSparse.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbSparse.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbSparse.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbTimer.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbTimer.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbTimer.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbTimer.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/wbUtils.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbUtils.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbUtils.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/wbUtils.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always -o libwb/CMakeFiles/wb.dir/vendor/json11.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/vendor/json11.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/vendor/json11.cpp",
+  "output": "libwb/CMakeFiles/wb.dir/vendor/json11.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbArg.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbArg.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbArg.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbArg.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbCUDA.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbCUDA.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbCUDA.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbCUDA.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbDataset.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbDataset.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbDataset.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbDataset.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbDirectory.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbDirectory.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbDirectory.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbDirectory.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbExit.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbExit.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbExit.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbExit.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbExport.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbExport.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbExport.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbExport.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbFile.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbFile.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbFile.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbFile.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbImage.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbImage.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbImage.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbImage.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbImport.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbImport.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbImport.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbImport.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbInit.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbInit.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbInit.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbInit.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbLogger.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbLogger.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbLogger.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbLogger.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbMPI.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbMPI.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbMPI.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbMPI.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbPPM.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbPPM.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbPPM.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbPPM.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbPath.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbPath.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbPath.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbPath.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbSolution.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbSolution.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbSolution.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbSolution.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbSparse.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbSparse.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbSparse.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbSparse.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbTimer.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbTimer.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbTimer.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbTimer.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/wbUtils.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/wbUtils.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/wbUtils.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/wbUtils.cpp.o"
+},
+{
+  "directory": "/home/goncalovirginia/CLionProjects/CP-Project/cmake-build-debug",
+  "command": "/usr/bin/c++ -Dlibwb_EXPORTS -I/home/goncalovirginia/CLionProjects/CP-Project/libwb  -Wno-dollar-in-identifier-extension -std=c++11 -O3 -DNDEBUG -std=gnu++11 -fPIC -fdiagnostics-color=always -o libwb/CMakeFiles/libwb.dir/vendor/json11.cpp.o -c /home/goncalovirginia/CLionProjects/CP-Project/libwb/vendor/json11.cpp",
+  "file": "/home/goncalovirginia/CLionProjects/CP-Project/libwb/vendor/json11.cpp",
+  "output": "libwb/CMakeFiles/libwb.dir/vendor/json11.cpp.o"
+}
+]
