@@ -22,14 +22,14 @@ namespace cp {
 
 	static void percentageTo255(const float *input_image_data, const std::shared_ptr<unsigned char[]> &uchar_image,
 								int size_channels) {
-#pragma omp parallel for
+		#pragma omp parallel for
 		for (int i = 0; i < size_channels; i++)
 			uchar_image[i] = (unsigned char) (255 * input_image_data[i]);
 	}
 
 	static void grayScale(int height, int width, const std::shared_ptr<unsigned char[]> &uchar_image,
 						  const std::shared_ptr<unsigned char[]> &gray_image) {
-#pragma omp parallel for
+		#pragma omp parallel for
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
 				auto idx = i * width + j;
@@ -43,7 +43,7 @@ namespace cp {
 
 	static void computeHistogram(const int size, int (&histogram)[HISTOGRAM_LENGTH],
 								 const std::shared_ptr<unsigned char[]> &gray_image) {
-#pragma omp parallel for
+		#pragma omp parallel for
 		for (int i = 0; i < size; i++)
 			histogram[gray_image[i]]++;
 	}
@@ -61,7 +61,7 @@ namespace cp {
 	static void computeOutputImage(float *output_image_data, float (&cdf)[HISTOGRAM_LENGTH],
 								   const std::shared_ptr<unsigned char[]> &uchar_image, float cdf_min,
 								   int size_channels) {
-#pragma omp parallel for
+		#pragma omp parallel for
 		for (int i = 0; i < size_channels; i++) {
 			output_image_data[i] = static_cast<float>(correct_color(cdf[uchar_image[i]], cdf_min)) / 255.0f;
 		}
