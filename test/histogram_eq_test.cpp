@@ -1,6 +1,6 @@
 #include <filesystem>
 #include "gtest/gtest.h"
-#include "histogram_eq.h"
+#include "histogram_eq_parallel.h"
 
 using namespace cp;
 

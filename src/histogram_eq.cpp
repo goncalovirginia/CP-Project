@@ -2,10 +2,9 @@
 // Created by herve on 13-04-2024.
 //
 
-#include "histogram_eq.h"
+#include "histogram_eq_parallel.h"
 
 namespace cp {
-
 	constexpr auto HISTOGRAM_LENGTH = 256;
 
 	static float inline prob(const int x, const int size) {
@@ -32,11 +31,10 @@ namespace cp {
 		const auto size = width * height;
 		const auto size_channels = size * channels;
 
-		#pragma omp parallel for
 		for (int i = 0; i < size_channels; i++)
 			uchar_image[i] = (unsigned char) (255 * input_image_data[i]);
 
-		for (int i = 0; i < height; i++) {
+		for (int i = 0; i < height; i++)
 			for (int j = 0; j < width; j++) {
 				auto idx = i * width + j;
 				auto r = uchar_image[3 * idx];
@@ -44,7 +42,6 @@ namespace cp {
 				auto b = uchar_image[3 * idx + 2];
 				gray_image[idx] = static_cast<unsigned char>(0.21 * r + 0.71 * g + 0.07 * b);
 			}
-		}
 
 		std::fill(histogram, histogram + HISTOGRAM_LENGTH, 0);
 		for (int i = 0; i < size; i++)
@@ -66,6 +63,7 @@ namespace cp {
 	}
 
 	wbImage_t iterative_histogram_equalization(wbImage_t &input_image, int iterations) {
+
 		const auto width = wbImage_getWidth(input_image);
 		const auto height = wbImage_getHeight(input_image);
 		constexpr auto channels = 3;

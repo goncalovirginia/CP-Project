@@ -11,22 +11,6 @@ set(BUILD_LIBWB_LIBRARY ON CACHE BOOL "Turn on build of libwb library")
 add_subdirectory(libwb)
 include_directories(libwb)
 
-####################
-## OpenMP
-####################
-
-if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    include_directories("${OpenMP_MACOS_FOLDER}/include")
-    link_directories("${OpenMP_MACOS_FOLDER}/lib/")
-
-    set(OpenMP_CXX "${CMAKE_CXX_COMPILER}")
-    set(OpenMP_CXX_FLAGS "-Xclang -fopenmp ")
-    set(OpenMP_CXX_LIB_NAMES "libomp")
-    set(OpenMP_libomp_LIBRARY "omp")
-endif()
-
-find_package(OpenMP)
-
 ###############
 # project - sequential
 ###############
@@ -34,8 +18,8 @@ find_package(OpenMP)
 include_directories(include)
 
 add_executable(project
-        src/sequential/main.cpp
-        src/sequential/histogram_eq.cpp
+        src/main.cpp
+        src/histogram_eq.cpp
 )
 
 target_link_libraries(project wb)
@@ -44,14 +28,16 @@ target_link_libraries(project wb)
 # project - parallel
 ###############
 
+find_package(OpenMP REQUIRED)
+
 include_directories(include)
 
 add_executable(project-parallel
-        src/parallel/main.cpp
-        src/parallel/histogram_eq.cpp
+        src/main.cpp
+        src/histogram_eq_parallel.cpp
 )
 
-target_link_libraries(project-parallel PUBLIC wb OpenMP::OpenMP_CXX)
+target_link_libraries(project-parallel PUBLIC OpenMP::OpenMP_CXX wb)
 
 ##############################################################
 # Tests
