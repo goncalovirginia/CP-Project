@@ -39,6 +39,22 @@ add_executable(project-parallel
 
 target_link_libraries(project-parallel PUBLIC OpenMP::OpenMP_CXX wb)
 
+###############
+# project - parallel vectorized
+###############
+
+find_package(OpenMP REQUIRED)
+
+include_directories(include)
+
+add_executable(project-parallel-vectorized
+        src/main.cpp
+        src/histogram_eq_parallel.cpp
+)
+
+target_link_libraries(project-parallel-vectorized PUBLIC OpenMP::OpenMP_CXX wb)
+target_compile_options(project-parallel-vectorized PRIVATE -O2 -ftree-vectorize -fopt-info-vec-optimized)
+
 ##############################################################
 # Tests
 ##############################################################
