@@ -1,7 +1,5 @@
 #include <cuda_runtime.h>
 #include "histogram_eq.h"
-#include <iostream>
-#include <memory>
 
 namespace cp {
 
@@ -41,10 +39,9 @@ namespace cp {
 
 		if (x < width && y < height) {
 			int idx = y * width + x;
-			int rgb_idx = 3 * idx;
-			unsigned char r = rgb_image[rgb_idx];
-			unsigned char g = rgb_image[rgb_idx + 1];
-			unsigned char b = rgb_image[rgb_idx + 2];
+			unsigned char r = rgb_image[idx * 3];
+			unsigned char g = rgb_image[idx * 3 + 1];
+			unsigned char b = rgb_image[idx * 3 + 2];
 			gray_image[idx] = static_cast<unsigned char>(0.21 * r + 0.71 * g + 0.07 * b);
 		}
 	}
@@ -104,8 +101,7 @@ namespace cp {
 	}
 
 	static void histogram_equalization(const int width, const int height, const int size, const int size_channels,
-									   int (&histogram)[HISTOGRAM_LENGTH],
-									   float (&cdf)[HISTOGRAM_LENGTH],
+									   int (&histogram)[HISTOGRAM_LENGTH], float (&cdf)[HISTOGRAM_LENGTH],
 									   const float *gpu_input_image, unsigned char *gpu_uchar_image, unsigned char *gpu_rgb_image,
 									   unsigned char *gpu_gray_image, int *gpu_local_histograms, int *gpu_global_histogram,
 									   float *gpu_cdf, float *gpu_output_image_data) {
@@ -155,10 +151,9 @@ namespace cp {
 		int histogram[HISTOGRAM_LENGTH];
 		float cdf[HISTOGRAM_LENGTH];
 
-		float *gpu_input;
+		float *gpu_input, *gpu_cdf, *gpu_output_image_data;
 		unsigned char *gpu_uchar_image, *gpu_rgb_image, *gpu_gray_image;
 		int *gpu_local_histograms, *gpu_global_histogram;
-		float *gpu_cdf, *gpu_output_image_data;
 
 		int numBlocks = (width * height + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK;
 
