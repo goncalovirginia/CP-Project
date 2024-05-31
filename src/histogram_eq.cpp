@@ -2,7 +2,7 @@
 // Created by herve on 13-04-2024.
 //
 
-#include "histogram_eq_parallel.h"
+#include "histogram_eq.h"
 
 namespace cp {
 	constexpr auto HISTOGRAM_LENGTH = 256;

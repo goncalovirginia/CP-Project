@@ -1,12 +1,8 @@
-//
-// Created by herve on 13-04-2024.
-//
-
-#include "histogram_eq_parallel.h"
+#include "histogram_eq.h"
 
 namespace cp {
 
-	constexpr auto HISTOGRAM_LENGTH = 256;
+	constexpr int HISTOGRAM_LENGTH = 256;
 
 	static float inline prob(const int x, const int size) {
 		return (float) x / (float) size;
@@ -114,8 +110,7 @@ namespace cp {
 		for (int i = 0; i < iterations; ++i) {
 			histogram_equalization(width, height, size, size_channels,
 								   input_image_data, output_image_data,
-								   uchar_image, gray_image,
-								   histogram, cdf);
+								   uchar_image, gray_image,histogram, cdf);
 
 			input_image_data = output_image_data;
 		}

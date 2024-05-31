@@ -1,5 +1,4 @@
-
-#include "histogram_eq_parallel.h"
+#include "histogram_eq.h"
 #include <cstdlib>
 #include <chrono>
 
