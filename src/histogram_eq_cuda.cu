@@ -27,7 +27,7 @@ namespace cp {
 	}
 
 	__global__ void percentageTo255(const float *input, unsigned char *output, int size) {
-		int idx = threadIdx.x + blockIdx.x * blockDim.x;
+		int idx = blockIdx.x * blockDim.x + threadIdx.x;
 		if (idx < size) {
 			output[idx] = static_cast<unsigned char>(255 * input[idx]);
 		}
@@ -47,33 +47,33 @@ namespace cp {
 	}
 
 	__global__ void computeHistogram(const unsigned char *gray_image, int *local_histograms, int width, int height) {
-		extern __shared__ int local_hist[];
+		extern __shared__ int local_histogram[];
 
 		if (threadIdx.x < HISTOGRAM_LENGTH) {
-			local_hist[threadIdx.x] = 0;
+			local_histogram[threadIdx.x] = 0;
 		}
 		__syncthreads();
 
 		int i = blockIdx.x * blockDim.x + threadIdx.x;
 
 		while (i < width * height) {
-			atomicAdd(&local_hist[gray_image[i]], 1);
+			atomicAdd(&local_histogram[gray_image[i]], 1);
 			i += blockDim.x * gridDim.x;
 		}
 		__syncthreads();
 
 		if (threadIdx.x < HISTOGRAM_LENGTH) {
-			atomicAdd(&local_histograms[blockIdx.x * HISTOGRAM_LENGTH + threadIdx.x], local_hist[threadIdx.x]);
+			atomicAdd(&local_histograms[blockIdx.x * HISTOGRAM_LENGTH + threadIdx.x], local_histogram[threadIdx.x]);
 		}
 	}
 
 	__global__ void reduceHistograms(int *local_histograms, int *global_histogram, int num_blocks) {
+		int reduction = 0;
 		int idx = threadIdx.x;
-		int sum = 0;
 		for (int i = 0; i < num_blocks; i++) {
-			sum += local_histograms[i * HISTOGRAM_LENGTH + idx];
+			reduction += local_histograms[i * HISTOGRAM_LENGTH + idx];
 		}
-		global_histogram[idx] = sum;
+		global_histogram[idx] = reduction;
 	}
 
 	static float computeCDF(float (&cdf)[HISTOGRAM_LENGTH], int (&histogram)[HISTOGRAM_LENGTH], const int size) {
@@ -101,7 +101,7 @@ namespace cp {
 
 	static void histogram_equalization(const int width, const int height, const int size, const int size_channels,
 									   int (&histogram)[HISTOGRAM_LENGTH], float (&cdf)[HISTOGRAM_LENGTH],
-									   const float *gpu_input_image, unsigned char *gpu_uchar_image, unsigned char *gpu_rgb_image,
+									   const float *gpu_input_image, unsigned char *gpu_uchar_image,
 									   unsigned char *gpu_gray_image, int *gpu_local_histograms, int *gpu_global_histogram,
 									   float *gpu_cdf, float *gpu_output_image_data) {
 
@@ -151,14 +151,13 @@ namespace cp {
 		float cdf[HISTOGRAM_LENGTH];
 
 		float *gpu_input, *gpu_cdf, *gpu_output_image_data;
-		unsigned char *gpu_uchar_image, *gpu_rgb_image, *gpu_gray_image;
+		unsigned char *gpu_uchar_image, *gpu_gray_image;
 		int *gpu_local_histograms, *gpu_global_histogram;
 
 		int numBlocks = (width * height + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK;
 
 		cudaMalloc(&gpu_input, size_channels * sizeof(float));
 		cudaMalloc(&gpu_uchar_image, size_channels * sizeof(unsigned char));
-		cudaMalloc(&gpu_rgb_image, size_channels * sizeof(unsigned char));
 		cudaMalloc(&gpu_gray_image, size * sizeof(unsigned char));
 		cudaMalloc(&gpu_local_histograms, numBlocks * HISTOGRAM_LENGTH * sizeof(int));
 		cudaMalloc(&gpu_global_histogram, HISTOGRAM_LENGTH * sizeof(int));
@@ -169,7 +168,7 @@ namespace cp {
 
 		for (int i = 0; i < iterations; i++) {
 			histogram_equalization(width, height, size, size_channels,histogram, cdf,
-								   gpu_input, gpu_uchar_image, gpu_rgb_image, gpu_gray_image,
+								   gpu_input, gpu_uchar_image, gpu_gray_image,
 								   gpu_local_histograms, gpu_global_histogram,gpu_cdf, gpu_output_image_data);
 
 			input_image_data = output_image_data;
@@ -179,7 +178,6 @@ namespace cp {
 
 		cudaFree(gpu_input);
 		cudaFree(gpu_uchar_image);
-		cudaFree(gpu_rgb_image);
 		cudaFree(gpu_gray_image);
 		cudaFree(gpu_local_histograms);
 		cudaFree(gpu_global_histogram);
