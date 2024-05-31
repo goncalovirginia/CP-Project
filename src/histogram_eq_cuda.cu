@@ -7,6 +7,7 @@ namespace cp {
 
 	constexpr int HISTOGRAM_LENGTH = 256;
 	constexpr int THREADS_PER_BLOCK = 2048;
+	constexpr int TILE_WIDTH = 64;
 
 	static float inline prob(const int x, const int size) {
 		return static_cast<float>(x) / static_cast<float>(size);
@@ -48,28 +49,28 @@ namespace cp {
 		}
 	}
 
-	__global__ void computeLocalHistogram(const unsigned char *gray_image, int *local_histograms, int width, int height) {
+	__global__ void computeHistogram(const unsigned char *gray_image, int *local_histograms, int width, int height) {
 		extern __shared__ int local_hist[];
-		int tid = threadIdx.x + blockIdx.x * blockDim.x;
-		int idx = threadIdx.x;
 
-		if (idx < HISTOGRAM_LENGTH) {
-			local_hist[idx] = 0;
+		if (threadIdx.x < HISTOGRAM_LENGTH) {
+			local_hist[threadIdx.x] = 0;
 		}
 		__syncthreads();
 
-		while (tid < width * height) {
-			atomicAdd(&local_hist[gray_image[tid]], 1);
-			tid += blockDim.x * gridDim.x;
+		int i = blockIdx.x * blockDim.x + threadIdx.x;
+
+		while (i < width * height) {
+			atomicAdd(&local_hist[gray_image[i]], 1);
+			i += blockDim.x * gridDim.x;
 		}
 		__syncthreads();
 
-		if (idx < HISTOGRAM_LENGTH) {
-			atomicAdd(&local_histograms[blockIdx.x * HISTOGRAM_LENGTH + idx], local_hist[idx]);
+		if (threadIdx.x < HISTOGRAM_LENGTH) {
+			atomicAdd(&local_histograms[blockIdx.x * HISTOGRAM_LENGTH + threadIdx.x], local_hist[threadIdx.x]);
 		}
 	}
 
-	__global__ void mergeLocalHistograms(int *local_histograms, int *global_histogram, int num_blocks) {
+	__global__ void mergeHistograms(int *local_histograms, int *global_histogram, int num_blocks) {
 		int idx = threadIdx.x;
 		int sum = 0;
 
@@ -103,10 +104,6 @@ namespace cp {
 	}
 
 	static void histogram_equalization(const int width, const int height, const int size, const int size_channels,
-									   const float *input_image_data,
-									   float *output_image_data,
-									   const std::shared_ptr<unsigned char[]> &uchar_image,
-									   const std::shared_ptr<unsigned char[]> &gray_image,
 									   int (&histogram)[HISTOGRAM_LENGTH],
 									   float (&cdf)[HISTOGRAM_LENGTH],
 									   const float *gpu_input_image, unsigned char *gpu_uchar_image, unsigned char *gpu_rgb_image,
@@ -116,14 +113,8 @@ namespace cp {
 		percentageTo255<<<(size_channels + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK, THREADS_PER_BLOCK>>>(gpu_input_image,gpu_uchar_image,size_channels);
 		cudaDeviceSynchronize();
 
-		int blockWidth = static_cast<int>(sqrt(THREADS_PER_BLOCK));
-		while (THREADS_PER_BLOCK % blockWidth != 0) {
-			blockWidth--;
-		}
-		int blockHeight = THREADS_PER_BLOCK / blockWidth;
-		dim3 blockDim(blockWidth, blockHeight);
-		dim3 gridDim((width + blockDim.x - 1) / blockDim.x, (height + blockDim.y - 1) / blockDim.y);
-
+		dim3 gridDim((width - 1) / TILE_WIDTH + 1, (height - 1) / TILE_WIDTH + 1);
+		dim3 blockDim(TILE_WIDTH, TILE_WIDTH);
 		grayScale<<<gridDim, blockDim>>>(gpu_uchar_image, gpu_gray_image, width, height);
 		cudaDeviceSynchronize();
 
@@ -131,9 +122,9 @@ namespace cp {
 		std::fill(histogram, histogram + HISTOGRAM_LENGTH, 0);
 		cudaMemset(gpu_local_histograms, 0, numBlocks * HISTOGRAM_LENGTH * sizeof(int));
 		cudaMemset(gpu_global_histogram, 0, HISTOGRAM_LENGTH * sizeof(int));
-		computeLocalHistogram<<<numBlocks, THREADS_PER_BLOCK, HISTOGRAM_LENGTH * sizeof(int)>>>(gpu_gray_image, gpu_local_histograms, width, height);
+		computeHistogram<<<numBlocks, THREADS_PER_BLOCK, HISTOGRAM_LENGTH * sizeof(int)>>>(gpu_gray_image,gpu_local_histograms, width,height);
 		cudaDeviceSynchronize();
-		mergeLocalHistograms<<<1, HISTOGRAM_LENGTH>>>(gpu_local_histograms, gpu_global_histogram, numBlocks);
+		mergeHistograms<<<1, HISTOGRAM_LENGTH>>>(gpu_local_histograms, gpu_global_histogram, numBlocks);
 		cudaDeviceSynchronize();
 		cudaMemcpy(histogram, gpu_global_histogram, HISTOGRAM_LENGTH * sizeof(int), cudaMemcpyDeviceToHost);
 
@@ -183,12 +174,9 @@ namespace cp {
 		cudaMemcpy(gpu_input, input_image_data, size_channels * sizeof(float), cudaMemcpyHostToDevice);
 
 		for (int i = 0; i < iterations; i++) {
-			histogram_equalization(width, height, size, size_channels,
-								   input_image_data, output_image_data,
-								   uchar_image, gray_image, histogram, cdf,
-								   gpu_input, gpu_uchar_image, gpu_rgb_image,
-								   gpu_gray_image, gpu_local_histograms,
-								   gpu_global_histogram,gpu_cdf, gpu_output_image_data);
+			histogram_equalization(width, height, size, size_channels,histogram, cdf,
+								   gpu_input, gpu_uchar_image, gpu_rgb_image, gpu_gray_image,
+								   gpu_local_histograms, gpu_global_histogram,gpu_cdf, gpu_output_image_data);
 
 			input_image_data = output_image_data;
 		}
