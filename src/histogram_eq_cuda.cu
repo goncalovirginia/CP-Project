@@ -67,10 +67,9 @@ namespace cp {
 		}
 	}
 
-	__global__ void mergeHistograms(int *local_histograms, int *global_histogram, int num_blocks) {
+	__global__ void reduceHistograms(int *local_histograms, int *global_histogram, int num_blocks) {
 		int idx = threadIdx.x;
 		int sum = 0;
-
 		for (int i = 0; i < num_blocks; i++) {
 			sum += local_histograms[i * HISTOGRAM_LENGTH + idx];
 		}
@@ -117,10 +116,10 @@ namespace cp {
 		int numBlocks = (width * height + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK;
 		std::fill(histogram, histogram + HISTOGRAM_LENGTH, 0);
 		cudaMemset(gpu_local_histograms, 0, numBlocks * HISTOGRAM_LENGTH * sizeof(int));
-		cudaMemset(gpu_global_histogram, 0, HISTOGRAM_LENGTH * sizeof(int));
 		computeHistogram<<<numBlocks, THREADS_PER_BLOCK, HISTOGRAM_LENGTH * sizeof(int)>>>(gpu_gray_image,gpu_local_histograms, width,height);
 		cudaDeviceSynchronize();
-		mergeHistograms<<<1, HISTOGRAM_LENGTH>>>(gpu_local_histograms, gpu_global_histogram, numBlocks);
+		cudaMemset(gpu_global_histogram, 0, HISTOGRAM_LENGTH * sizeof(int));
+		reduceHistograms<<<1, HISTOGRAM_LENGTH>>>(gpu_local_histograms, gpu_global_histogram, numBlocks);
 		cudaDeviceSynchronize();
 		cudaMemcpy(histogram, gpu_global_histogram, HISTOGRAM_LENGTH * sizeof(int), cudaMemcpyDeviceToHost);
 
