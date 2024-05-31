@@ -79,43 +79,6 @@ namespace cp {
 		global_histogram[idx] = sum;
 	}
 
-	__global__ void computeOutputImage(const unsigned char *uchar_image, float *output_image_data, int size_channels) {
-		int idx = blockIdx.x * blockDim.x + threadIdx.x;
-		if (idx < size_channels) {
-			output_image_data[idx] = static_cast<float>(uchar_image[idx]) / 255.0f;
-		}
-	}
-/*
-	static void percentageTo255(const float *input_image_data, const std::shared_ptr<unsigned char[]> &uchar_image,
-								int size_channels) {
-		#pragma omp parallel for
-		for (int i = 0; i < size_channels; ++i)
-			uchar_image[i] = (unsigned char) (255 * input_image_data[i]);
-	}
-
-	static void grayScale(int height, int width, const std::shared_ptr<unsigned char[]> &uchar_image,
-						  const std::shared_ptr<unsigned char[]> &gray_image) {
-		#pragma omp parallel for
-		for (int i = 0; i < height; ++i) {
-			for (int j = 0; j < width; ++j) {
-				int idx = i * width + j;
-				unsigned char r = uchar_image[3 * idx];
-				unsigned char g = uchar_image[3 * idx + 1];
-				unsigned char b = uchar_image[3 * idx + 2];
-				gray_image[idx] = static_cast<unsigned char>(0.21 * r + 0.71 * g + 0.07 * b);
-			}
-		}
-	}
-
-	static void computeHistogram(const int size, int (&histogram)[HISTOGRAM_LENGTH], const std::shared_ptr<unsigned char[]> &gray_image) {
-		std::fill(histogram, histogram + HISTOGRAM_LENGTH, 0);
-
-		#pragma omp parallel for reduction(+:histogram)
-		for (int i = 0; i < size; ++i) {
-			++histogram[gray_image[i]];
-		}
-	}
-
 	static float computeCDF(float (&cdf)[HISTOGRAM_LENGTH], int (&histogram)[HISTOGRAM_LENGTH], const int size) {
 		#pragma omp parallel for schedule(static, 64)
 		for (int i = 0; i < HISTOGRAM_LENGTH; ++i) {
@@ -132,15 +95,13 @@ namespace cp {
 		return cdf_min;
 	}
 
-	static void computeOutputImage(float *output_image_data, float (&cdf)[HISTOGRAM_LENGTH],
-								   const std::shared_ptr<unsigned char[]> &uchar_image, float cdf_min,
-								   int size_channels) {
-		#pragma omp parallel for
-		for (int i = 0; i < size_channels; ++i) {
-			output_image_data[i] = correct_color(cdf[uchar_image[i]], cdf_min);
+	__global__ void computeOutputImage(const unsigned char *uchar_image, float *output_image_data, int size_channels) {
+		int idx = blockIdx.x * blockDim.x + threadIdx.x;
+		if (idx < size_channels) {
+			output_image_data[idx] = static_cast<float>(uchar_image[idx]) / 255.0f;
 		}
 	}
-*/
+
 	static void histogram_equalization(const int width, const int height, const int size, const int size_channels,
 									   const float *input_image_data,
 									   float *output_image_data,
@@ -148,14 +109,13 @@ namespace cp {
 									   const std::shared_ptr<unsigned char[]> &gray_image,
 									   int (&histogram)[HISTOGRAM_LENGTH],
 									   float (&cdf)[HISTOGRAM_LENGTH],
-									   float *d_input, unsigned char *d_uchar_image, unsigned char *d_rgb_image,
-									   unsigned char *d_gray_image, int *d_local_histograms, int *d_global_histogram,
-									   float *d_cdf, float *d_output_image_data) {
+									   const float *gpu_input_image, unsigned char *gpu_uchar_image, unsigned char *gpu_rgb_image,
+									   unsigned char *gpu_gray_image, int *gpu_local_histograms, int *gpu_global_histogram,
+									   float *gpu_cdf, float *gpu_output_image_data) {
 
-		percentageTo255<<<(size_channels + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK, THREADS_PER_BLOCK>>>(d_input,d_uchar_image,size_channels);
+		percentageTo255<<<(size_channels + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK, THREADS_PER_BLOCK>>>(gpu_input_image,gpu_uchar_image,size_channels);
 		cudaDeviceSynchronize();
 
-		// Compute grid and block dimensions for grayscale conversion
 		int blockWidth = static_cast<int>(sqrt(THREADS_PER_BLOCK));
 		while (THREADS_PER_BLOCK % blockWidth != 0) {
 			blockWidth--;
@@ -164,37 +124,26 @@ namespace cp {
 		dim3 blockDim(blockWidth, blockHeight);
 		dim3 gridDim((width + blockDim.x - 1) / blockDim.x, (height + blockDim.y - 1) / blockDim.y);
 
-		// Convert RGB to grayscale
-		grayScale<<<gridDim, blockDim>>>(d_uchar_image, d_gray_image, width, height);
+		grayScale<<<gridDim, blockDim>>>(gpu_uchar_image, gpu_gray_image, width, height);
 		cudaDeviceSynchronize();
 
-		// Calculate number of blocks for the histogram computation
 		int numBlocks = (width * height + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK;
-
-		// Compute histogram
 		std::fill(histogram, histogram + HISTOGRAM_LENGTH, 0);
-		cudaMemset(d_local_histograms, 0, numBlocks * HISTOGRAM_LENGTH * sizeof(int));
-		cudaMemset(d_global_histogram, 0, HISTOGRAM_LENGTH * sizeof(int));
-		computeLocalHistogram<<<numBlocks, THREADS_PER_BLOCK, HISTOGRAM_LENGTH * sizeof(int)>>>(d_gray_image, d_local_histograms, width, height);
+		cudaMemset(gpu_local_histograms, 0, numBlocks * HISTOGRAM_LENGTH * sizeof(int));
+		cudaMemset(gpu_global_histogram, 0, HISTOGRAM_LENGTH * sizeof(int));
+		computeLocalHistogram<<<numBlocks, THREADS_PER_BLOCK, HISTOGRAM_LENGTH * sizeof(int)>>>(gpu_gray_image, gpu_local_histograms, width, height);
 		cudaDeviceSynchronize();
-		mergeLocalHistograms<<<1, HISTOGRAM_LENGTH>>>(d_local_histograms, d_global_histogram, numBlocks);
+		mergeLocalHistograms<<<1, HISTOGRAM_LENGTH>>>(gpu_local_histograms, gpu_global_histogram, numBlocks);
 		cudaDeviceSynchronize();
-		cudaMemcpy(histogram, d_global_histogram, HISTOGRAM_LENGTH * sizeof(int), cudaMemcpyDeviceToHost);
+		cudaMemcpy(histogram, gpu_global_histogram, HISTOGRAM_LENGTH * sizeof(int), cudaMemcpyDeviceToHost);
 
-		// Compute CDF
-		cdf[0] = prob(histogram[0], size);
-		for (int i = 1; i < HISTOGRAM_LENGTH; i++)
-			cdf[i] = cdf[i - 1] + prob(histogram[i], size);
+		float cdf_min = computeCDF(cdf, histogram, size);
 
-		auto cdf_min = cdf[0];
-
-		// Correct colors
-		cudaMemcpy(d_cdf, cdf, HISTOGRAM_LENGTH * sizeof(float), cudaMemcpyHostToDevice);
-		correct_color<<<(size_channels + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK, THREADS_PER_BLOCK>>>(d_uchar_image,d_cdf, cdf_min, size_channels);
+		cudaMemcpy(gpu_cdf, cdf, HISTOGRAM_LENGTH * sizeof(float), cudaMemcpyHostToDevice);
+		correct_color<<<(size_channels + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK, THREADS_PER_BLOCK>>>(gpu_uchar_image, gpu_cdf, cdf_min, size_channels);
 		cudaDeviceSynchronize();
 
-		// Generate equalized image
-		computeOutputImage<<<(size_channels + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK, THREADS_PER_BLOCK>>>(d_uchar_image, d_output_image_data, size_channels);
+		computeOutputImage<<<(size_channels + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK, THREADS_PER_BLOCK>>>(gpu_uchar_image, gpu_output_image_data, size_channels);
 		cudaDeviceSynchronize();
 	}
 
