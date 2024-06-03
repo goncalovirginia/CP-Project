@@ -1462,8 +1462,7 @@
   \global\@ACM@journal@bibstripfalse
 }
 \if@ACM@journal\else
-\acmConference[Conference'17]{ACM Conference}{July 2017}{Washington,
-  DC, USA}%
+\acmConference[Concurrency and Parallelism 23/24]{FCT-UNL}{June 3}{Almada, Portugal}%
 \fi
 \def\acmBooktitle#1{\gdef\@acmBooktitle{#1}}
 \acmBooktitle{}

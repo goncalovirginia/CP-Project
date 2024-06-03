@@ -1,8 +1,14 @@
 #include "histogram_eq.h"
+#include <chrono>
+#include <omp.h>
+
+using namespace std::chrono;
 
 namespace cp {
 
 	constexpr int HISTOGRAM_LENGTH = 256;
+
+	int FUNCTION_TIMES[5] = {0, 0, 0, 0, 0};
 
 	static float inline prob(const int x, const int size) {
 		return (float) x / (float) size;
@@ -79,15 +85,40 @@ namespace cp {
 									   int (&histogram)[HISTOGRAM_LENGTH],
 									   float (&cdf)[HISTOGRAM_LENGTH]) {
 
+		auto start = high_resolution_clock::now();
+
 		percentageTo255(input_image_data, uchar_image, size_channels);
+
+		auto end = high_resolution_clock::now();
+		FUNCTION_TIMES[0] += duration_cast<milliseconds>(end - start).count();
+
+		start = high_resolution_clock::now();
 
 		grayScale(height, width, uchar_image, gray_image);
 
+		end = high_resolution_clock::now();
+		FUNCTION_TIMES[1] += duration_cast<milliseconds>(end - start).count();
+
+		start = high_resolution_clock::now();
+
 		computeHistogram(size, histogram, gray_image);
+
+		end = high_resolution_clock::now();
+		FUNCTION_TIMES[2] += duration_cast<milliseconds>(end - start).count();
+
+		start = high_resolution_clock::now();
 
 		float cdf_min = computeCDF(cdf, histogram, size);
 
+		end = high_resolution_clock::now();
+		FUNCTION_TIMES[3] += duration_cast<milliseconds>(end - start).count();
+
+		start = high_resolution_clock::now();
+
 		computeOutputImage(output_image_data, cdf, uchar_image, cdf_min, size_channels);
+
+		end = high_resolution_clock::now();
+		FUNCTION_TIMES[4] += duration_cast<milliseconds>(end - start).count();
 	}
 
 	wbImage_t iterative_histogram_equalization(wbImage_t &input_image, int iterations) {
@@ -107,12 +138,18 @@ namespace cp {
 		int histogram[HISTOGRAM_LENGTH];
 		float cdf[HISTOGRAM_LENGTH];
 
+		//omp_set_num_threads(8);
+
 		for (int i = 0; i < iterations; ++i) {
 			histogram_equalization(width, height, size, size_channels,
 								   input_image_data, output_image_data,
 								   uchar_image, gray_image,histogram, cdf);
 
 			input_image_data = output_image_data;
+		}
+
+		for (int i = 0; i < 5; ++i) {
+			std::cout << FUNCTION_TIMES[i] << "\n";
 		}
 
 		return output_image;

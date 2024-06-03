@@ -1,3 +1,11 @@
 # Concurrency and Parallelism 23/24 - Project
 
-Place your scripts in this folder.
+Build:
+```bash
+sh scripts/build.sh
+```
+
+Run:
+```bash
+./build/project_parallel_vectorized <input_image> <iterations> <output_image>
+```

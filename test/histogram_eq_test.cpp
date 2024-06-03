@@ -7,8 +7,17 @@ using namespace cp;
 #define DATASET_FOLDER "../../dataset/"
 
 TEST(HistogramEq, Input01_4) {
+	wbImage_t inputImage = wbImport(DATASET_FOLDER "borabora_1.ppm");
 
-	wbImage_t inputImage = wbImport(DATASET_FOLDER "input01.ppm");
-	wbImage_t outputImage = iterative_histogram_equalization(inputImage, 4);
-	// check if the output image is correct
+	auto seqArray = wbImage_getData(wbImport(DATASET_FOLDER "borabora_1_out_test.ppm"));
+	auto parArray = wbImage_getData(iterative_histogram_equalization(inputImage, 10));
+
+	for (int i = 0; i < inputImage->height * inputImage->width; ++i) {
+		if (parArray[i] != seqArray[i]) {
+			std:: cout << "Images are not equal.";
+			return;
+		}
+	}
+
+	std::cout << "Images are equal.";
 }
